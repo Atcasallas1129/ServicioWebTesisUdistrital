@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7aa3a135911b4bf7b74f5ed25ce8c188" Name="Diagram1">
+        <EntityTypeShape EntityType="DocumentacionDemoModel.dane" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentacionDemoModel.genero" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentacionDemoModel.hechoVictimizante" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentacionDemoModel.parentesco" Width="1.5" PointX="3" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentacionDemoModel.persona" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentacionDemoModel.procesoDocumentacion" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentacionDemoModel.soporte" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentacionDemoModel.soporteXRadicado" Width="1.5" PointX="8.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentacionDemoModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentacionDemoModel.tipoDocumento" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentacionDemoModel.usuario" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentacionDemoModel.usuarioXradicado" Width="1.5" PointX="5.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentacionDemoModel.vw_consultaCasoDocumentacion" Width="1.5" PointX="10.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentacionDemoModel.vw_informacionPersona" Width="1.5" PointX="7.75" PointY="12.25" IsExpanded="true" />
+        <AssociationConnector Association="DocumentacionDemoModel.FK_procesoDocumentacion_dane" ManuallyRouted="false" />
+        <AssociationConnector Association="DocumentacionDemoModel.FK_persona_genero" ManuallyRouted="false" />
+        <AssociationConnector Association="DocumentacionDemoModel.FK_procesoDocumentacion_hechoVictimizante" ManuallyRouted="false" />
+        <AssociationConnector Association="DocumentacionDemoModel.FK_procesoDocumentacion_parentesco" ManuallyRouted="false" />
+        <AssociationConnector Association="DocumentacionDemoModel.FK_persona_tipoDocumento" ManuallyRouted="false" />
+        <AssociationConnector Association="DocumentacionDemoModel.FK_procesoDocumentacion_persona" ManuallyRouted="false" />
+        <AssociationConnector Association="DocumentacionDemoModel.FK_procesoDocumentacion_persona1" ManuallyRouted="false" />
+        <AssociationConnector Association="DocumentacionDemoModel.FK_soporteXRadicado_persona" ManuallyRouted="false" />
+        <AssociationConnector Association="DocumentacionDemoModel.FK_procesoDocumentacion_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="DocumentacionDemoModel.FK_soporteXRadicado_soporte" ManuallyRouted="false" />
+        <AssociationConnector Association="DocumentacionDemoModel.FK_usuario_tipoDocumento" ManuallyRouted="false" />
+        <AssociationConnector Association="DocumentacionDemoModel.FK_usuarioXradicado_usuario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

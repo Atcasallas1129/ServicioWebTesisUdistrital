@@ -12,6 +12,7 @@ namespace WebApplication1
     // NOTE: In order to launch WCF Test Client for testing this service, please select WSTEsisUdistrital.svc or WSTEsisUdistrital.svc.cs at the Solution Explorer and start debugging.
     public class WSTEsisUdistrital : IWSTEsisUdistrital
     {
+        public Int64 IdUsuarioLogeado;
         public List<vw_consultaCasoDocumentacionWS> GetRegistrosDocumentados(string usuario, string contrasena)
         {
             try
@@ -20,11 +21,15 @@ namespace WebApplication1
                 {
                     DocumentacionDemoLocalEntities contextoL = new DocumentacionDemoLocalEntities();
                     string contrasenaEncriptada = EncriptarContrasena(contrasena);
-                    Int64 IdUsuario = Convert.ToInt64(from p in contextoL.usuario.AsNoTracking()
-                                                      where p.usuarioLogin == usuario && p.contrasena == contrasenaEncriptada
-                                                      select p.id);
+                    var UsuarioLogeado = (from p in contextoL.usuario.AsNoTracking()
+                                          where p.usuarioLogin == usuario && p.contrasena == contrasenaEncriptada
+                                          select p.id);
+                    foreach(var objeto in UsuarioLogeado)
+                    {
+                        IdUsuarioLogeado = objeto;
+                    }
                     var registroDocumentado = (from p in contextoL.vw_consultaCasoDocumentacionWS.AsNoTracking()
-                                               where p.usuarioModificacion == IdUsuario
+                                               where p.usuarioModificacion == IdUsuarioLogeado
                                                select p);
                     return registroDocumentado.ToList();
                 }

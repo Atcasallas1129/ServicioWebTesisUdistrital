@@ -239,6 +239,9 @@
     <Compile Include="vw_consultaCasoDocumentacion.cs">
       <DependentUpon>DemoDocumentacionLocal.tt</DependentUpon>
     </Compile>
+    <Compile Include="vw_consultaCasoDocumentacionWS.cs">
+      <DependentUpon>DemoDocumentacionLocal.tt</DependentUpon>
+    </Compile>
     <Compile Include="vw_informacionPersona.cs">
       <DependentUpon>DemoDocumentacionLocal.tt</DependentUpon>
     </Compile>

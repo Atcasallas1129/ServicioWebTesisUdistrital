@@ -12,6 +12,6 @@ namespace WebApplication1
     public interface IWSTEsisUdistrital
     {
         [OperationContract]
-        void DoWork();
+        List<vw_consultaCasoDocumentacionWS> GetRegistrosDocumentados(string usuario, string contrasena);
     }
 }

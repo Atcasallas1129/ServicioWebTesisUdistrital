@@ -12,6 +12,7 @@ namespace WebApplication1
     // NOTE: In order to launch WCF Test Client for testing this service, please select WSTEsisUdistrital.svc or WSTEsisUdistrital.svc.cs at the Solution Explorer and start debugging.
     public class WSTEsisUdistrital : IWSTEsisUdistrital
     {
+        
         public Int64 IdUsuarioLogeado;
         public List<vw_consultaCasoDocumentacionWS> GetRegistrosDocumentados(string usuario, string contrasena)
         {
@@ -32,6 +33,46 @@ namespace WebApplication1
                                                where p.usuarioModificacion == IdUsuarioLogeado
                                                select p);
                     return registroDocumentado.ToList();
+                }
+                else
+                {
+                    throw new Exception("Credenciales no validas entre el Entorno Local y Remoto");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool sincronizacionDatosServerLocal(string usuario, string contrasena, vw_consultaCasoDocumentacion objeto)
+        {
+            try
+            {
+                if (UsuarioValido(usuario, contrasena))
+                {
+                    DocumentacionDemoRemotoEntities contextoRemoto = new DocumentacionDemoRemotoEntities();
+                    Guid codUniqueObjeto = objeto.uniqueIdentifier;
+                    procesoDocumentacion registro = contextoRemoto.procesoDocumentacion.Single(X => X.uniqueIdentifier == codUniqueObjeto);
+                    parentesco parentescoObjeto = contextoRemoto.parentesco.FirstOrDefault(X => X.nombreParentesco == objeto.nombreParentesco);
+                    tipoDocumento tipoDocumentoObjeto = contextoRemoto.tipoDocumento.FirstOrDefault(X => X.descripcionDocumento == objeto.tipoDocumentoDestinatario);
+                    genero generoObjeto = contextoRemoto.genero.FirstOrDefault(X=>X.descripcionGenero == objeto.GeneroDestinatario);
+                    ///informacion del caso
+                    registro.parentesco = parentescoObjeto.idPerentesco;
+                    registro.porcentaje = objeto.porcentaje;
+                    registro.usuarioModificacion = objeto.usuarioModificacion;
+                    registro.fechaModificacion = objeto.fechaModificacion;
+                    registro.regModificado = objeto.regModificado;
+                    ///Informacion de la persona
+                    registro.persona1.primerNombre = objeto.primerNombreDestinatario;
+                    registro.persona1.segundoNombre = objeto.segundoNombreDestinatario;
+                    registro.persona1.primerApellido = objeto.primerApellidoDestinatario;
+                    registro.persona1.segundoApellido = objeto.segundoApellidoDestinatario;
+                    registro.persona1.tipoDocumento = tipoDocumentoObjeto.idTipoDocumento;
+                    registro.persona1.noDocumento = objeto.noDocumentoDestinatario;
+                    registro.persona1.genero = generoObjeto.idGenero;
+                    registro.persona1.fechaNacimiento = objeto.fechaNacimientoDestinatario;
+                    return true;
                 }
                 else
                 {

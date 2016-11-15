@@ -44,6 +44,10 @@ namespace WebApplication1
         public string noDocumentoDestinatario { get; set; }
         public System.DateTime fechaNacimientoDestinatario { get; set; }
         public string GeneroDestinatario { get; set; }
-        public double porcentaje { get; set; }
+        public string nombreParentesco { get; set; }
+        public string porcentaje { get; set; }
+        public Nullable<long> usuarioModificacion { get; set; }
+        public Nullable<System.DateTime> fechaModificacion { get; set; }
+        public Nullable<bool> regModificado { get; set; }
     }
 }

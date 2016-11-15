@@ -12,6 +12,7 @@ namespace WebApplication1
     public interface IWSTEsisUdistrital
     {
         [OperationContract]
-        List<vw_consultaCasoDocumentacionWS> GetRegistrosDocumentados(string usuario, string contrasena);
+        bool sincronizacionDatosServerLocal(string usuario, string contrasena, vw_consultaCasoDocumentacion objeto);
+        //List<vw_consultaCasoDocumentacionWS> GetRegistrosDocumentados(string usuario, string contrasena);
     }
 }

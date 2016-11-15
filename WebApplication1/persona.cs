@@ -17,9 +17,9 @@ namespace WebApplication1
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public persona()
         {
+            this.soporteXRadicado = new HashSet<soporteXRadicado>();
             this.procesoDocumentacion = new HashSet<procesoDocumentacion>();
             this.procesoDocumentacion1 = new HashSet<procesoDocumentacion>();
-            this.soporteXRadicado = new HashSet<soporteXRadicado>();
         }
     
         public long idPersona { get; set; }
@@ -32,15 +32,14 @@ namespace WebApplication1
         public string noDocumento { get; set; }
         public System.DateTime fechaNacimiento { get; set; }
         public long genero { get; set; }
-        public Nullable<bool> personaModificada { get; set; }
     
         public virtual genero genero1 { get; set; }
         public virtual tipoDocumento tipoDocumento1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<soporteXRadicado> soporteXRadicado { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<procesoDocumentacion> procesoDocumentacion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<procesoDocumentacion> procesoDocumentacion1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<soporteXRadicado> soporteXRadicado { get; set; }
     }
 }

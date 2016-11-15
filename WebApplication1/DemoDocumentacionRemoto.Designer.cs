@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'd:\users\alvaro\documents\visual studio 2015\Projects\ServicioWebTesisUdistrital\WebApplication1\DemoDocumentacionRemoto.edmx'. 
+﻿// T4 code generation is enabled for model 'd:\Users\alvaro\Documents\Visual Studio 2015\Projects\ServicioWebTesisUdistrital\WebApplication1\DemoDocumentacionRemoto.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
